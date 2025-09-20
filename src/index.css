@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SAMOS School Management Platform Design System */
+
+@layer base {
+  :root {
+    --background: 243 244 246 1; /* #F3F4F6 */
+    --foreground: 15 23 42 1; /* #0F172A */
+
+    --card: 255 255 255 1;
+    --card-foreground: 15 23 42 1;
+
+    --popover: 255 255 255 1;
+    --popover-foreground: 15 23 42 1;
+
+    /* SAMOS Blue Primary */
+    --primary: 221 83% 53%; /* #2563EB */
+    --primary-foreground: 255 255 255 1;
+    --primary-hover: 221 83% 45%;
+    --primary-light: 221 83% 95%;
+
+    /* Success Green */
+    --success: 142 71% 45%; /* #16A34A */
+    --success-foreground: 255 255 255 1;
+    --success-light: 142 71% 95%;
+
+    --secondary: 248 250 252 1; /* #F8FAFC */
+    --secondary-foreground: 71 85% 6%;
+
+    --muted: 241 245 249 1; /* #F1F5F9 */
+    --muted-foreground: 100 116% 139%;
+
+    --accent: 248 250 252 1;
+    --accent-foreground: 15 23 42 1;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 255 255 255 1;
+
+    --border: 226 232 240 1; /* #E2E8F0 */
+    --input: 226 232 240 1;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 11 18 32 1; /* #0B1220 */
+    --foreground: 248 250 252 1;
+
+    --card: 15 23 42 1; /* #0F172A */
+    --card-foreground: 248 250 252 1;
+
+    --popover: 15 23 42 1;
+    --popover-foreground: 248 250 252 1;
+
+    --primary: 221 83% 53%; /* Keep SAMOS Blue */
+    --primary-foreground: 255 255 255 1;
+    --primary-hover: 221 83% 45%;
+    --primary-light: 221 83% 15%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 255 255 255 1;
+    --success-light: 142 71% 15%;
+
+    --secondary: 30 41% 25%;
+    --secondary-foreground: 248 250 252 1;
+
+    --muted: 30 41% 15%;
+    --muted-foreground: 156 163% 175%;
+
+    --accent: 30 41% 25%;
+    --accent-foreground: 248 250 252 1;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 255 255 255 1;
+
+    --border: 30 41% 25%;
+    --input: 30 41% 25%;
+    --ring: 221 83% 53%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+/* Custom animations for SAMOS platform */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Glass effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--success)) 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, hsl(var(--primary-light)) 0%, hsl(var(--success-light)) 100%);
+}
